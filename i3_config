@@ -6,6 +6,7 @@
 #general- theme(widget)- adwaita
 #icon theme- ubuntu-mono-dark
 #workspace class- use xprop command in terminal
+#fix keyring probelm using seahorse. change password to blank
 
 
 
