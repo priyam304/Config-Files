@@ -5,6 +5,7 @@
 #isntall playerctl
 #general- theme(widget)- adwaita
 #icon theme- ubuntu-mono-dark
+#workspace class- use xprop command in terminal
 
 
 
@@ -111,6 +112,7 @@ set $workspace3 "3:Files"
 set $workspace10 "grave:Sublime"
 set $workspace4 "4:VLC"
 set $workspace5 "5:Torrent"
+set $workspace6 "6:Steam"
 set $workspace7 "7:Games"
 set $workspace0 "0:Music"
 
@@ -120,7 +122,7 @@ bindsym $mod+2 workspace $workspace2
 bindsym $mod+3 workspace $workspace3
 bindsym $mod+4 workspace $workspace4
 bindsym $mod+5 workspace $workspace5
-bindsym $mod+6 workspace 6
+bindsym $mod+6 workspace $workspace6
 bindsym $mod+7 workspace $workspace7
 bindsym $mod+8 workspace $workspace8
 bindsym $mod+9 workspace 9
@@ -133,7 +135,7 @@ bindsym $mod+Shift+2 move container to $workspace2
 bindsym $mod+Shift+3 move container to $workspace3
 bindsym $mod+Shift+4 move container to $workspace4
 bindsym $mod+Shift+5 move container to $workspace5
-bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+6 move container to $workspace6
 bindsym $mod+Shift+7 move container to $workspace7
 bindsym $mod+Shift+8 move container to $workspace8
 bindsym $mod+Shift+9 move container to workspace 9
@@ -147,8 +149,11 @@ assign [class="Gnome-terminal"] $workspace2
 assign [class="Nautilus"] $workspace3
 assign [class="vlc"] $workspace4
 assign [class="Transmission-gtk"] $workspace5
+assign [class="Steam"] $workspace6
 assign [class="csgo_linux64"] $workspace7
+assign [class="dota2"] $workspace7
 assign [class="Sublime_text"] $workspace10
+assign [class="Eog"] $workspace6
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -197,7 +202,7 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #d
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 
-# Media player controls
+# Media player controls, have to download playerctl
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
@@ -207,5 +212,6 @@ bindsym XF86AudioPrev exec playerctl previous
 exec firefox
 exec gnome-terminal
 exec google-play-music-desktop-player
+exec nautilus
 exec_always feh --bg-scale /home/priyam/Pictures/interstellar_5370_1366x768.jpg 
-exec /usr/bin/setxkbmap -option "caps:swapescape"
+
